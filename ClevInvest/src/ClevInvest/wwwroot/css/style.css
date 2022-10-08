@@ -1,0 +1,220 @@
+﻿/*general styles for pages*/
+.imageStyle {
+    filter: drop-shadow(0px 7px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 40px;
+    padding-right: 4px;
+}
+
+#simple_img {
+    width: 675px;
+    height: 450px;
+}
+
+.pageText {
+    font-family: Montserrat, "Open Sans", Helvetica, Arial, sans-serif;
+    line-height: 1.25;
+    padding: 0;
+}
+
+.pageText h1 {
+    font-family: Montserrat Bold, "Open Sans", Helvetica, Arial, sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 30px;
+}
+
+.pageText h2 {
+    font-family: Montserrat Bold, "Open Sans", Helvetica, Arial, sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 24px;
+    margin-bottom: 0;
+}
+
+.pageText p {
+    box-sizing: content-box;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+}
+
+/*Investments page*/
+#invetmentsHeader {
+    position: relative;
+    top: 50px;
+}
+
+.myQuote {
+    font-family: Montserrat Italic, "Open Sans", Helvetica, Arial, sans-serif;
+    font-style: italic;
+    font-size: 18px;
+    color: #6B705C
+}
+
+/*InvestmentHistory page*/
+.parHeader {
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.underline {
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.searchLine {
+    background-color: #B7B7A4;
+    height: 45px;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+}
+
+#searchInput {
+    font-size: 20px;
+    font-weight: bold;
+    color: #6B705C;
+}
+
+#searchLogo {
+    color: #6B705C;
+}
+
+#searchBtn {
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    right: 0;
+}
+
+.form-control {
+    border-radius: 40px;
+}
+
+.articleTitle {
+    text-decoration: none;
+    color: black;
+    font-family: Montserrat, "Open Sans", Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.articleTitle:hover {
+    color: #6b705c;
+}
+
+.labelForIcons {
+    color: #6b705c;
+    font-family: Montserrat, "Open Sans", Helvetica, Arial, sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 18px;
+    margin-bottom: 0;
+    margin-left: 10px;
+}
+
+.inputStyle {
+    height: 40px;
+}
+
+/*Чтобы не менялся цвет полей при автозаполнении*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
+.btnRoundBorders {
+    border-radius: 40px;
+    width: 100%;
+}
+
+.profileImg {
+    width: 200px;
+    height: 200px;
+    border: 1px solid #6B705C;
+    border-radius: 40px;
+}
+
+.profileEdit {
+    line-height: 1.25;
+    margin-bottom: 16px;
+    border-radius: 5px;
+}
+
+.buttonWidth {
+    width: 120px;
+}
+
+textarea {
+    padding-top: 10px;
+    padding-bottom: 25px;
+    width: 100%;
+    display: block;
+}
+
+.textareaBorder {
+    border: 2px solid rgb(183, 183, 164) !important;
+}
+
+.myFont {
+    font-family: Montserrat Bold, "Open Sans", Helvetica, Arial, sans-serif;
+    font-style: normal;
+}
+
+.userCommentAvatar {
+    border: 2px solid #B7B7A4;
+    border-radius: 10px;
+    height: 80px;
+    min-width: 80px;
+}
+
+.userProfileAvatar {
+    border: 5px solid #B7B7A4;
+    border-radius: 10px;
+    height: 150px;
+    min-width: 100px;
+}
+
+.commentBorder {
+    padding: 2px;
+    border: 1px solid #6B705C;
+    border-radius: 3px;
+}
+
+.myBorderBottom {
+    border-bottom: 1px solid #6B705C;
+}
+
+.cardTextLeftFloating {
+    text-align: left;
+    padding-left: 10px;
+}
+
+.accountInput {
+    font-size: 16px;
+    border: none;
+    background-color: transparent !important;
+    pointer-events: none;
+}
+
+.loginInput {
+    border: none;
+    background-color: transparent !important;
+    pointer-events: none;
+}
+
+.textSize {
+    font-size: 12px;
+}
+
+.myMarginTop {
+    margin-top: 70px;
+}
+
+@media (min-width: 480px) and (max-width: 1024px) {
+    h4, input {
+        font-size: calc(14px + (18 - 14) * ((100vw - 480px) / (1024 - 480)));
+    }
+}

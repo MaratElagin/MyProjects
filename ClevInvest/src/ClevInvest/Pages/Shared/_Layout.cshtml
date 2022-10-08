@@ -1,0 +1,106 @@
+﻿@using ClevInvest.Pages.LoginRegister
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>@ViewData["Title"] - CleverInvest</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+              integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" rel="stylesheet"/>
+    <link rel="stylesheet" href="~/css/layout.css"/>
+    <link rel="stylesheet" href="~/css/style.css"/>
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-expand-xl navbar-toggleable-xl navbar-light box-shadow mb-3">
+        <div class="container position-relative p-0 pl-1">
+            <a class="navbar-brand mainLink ml-0 mr-0" asp-area="" asp-page="/Index"><img src="/images/logo_picture.svg" alt="logo" id="logo"> Clever Invest</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <div class="dropdown">
+                            <a class="dropdown-item nav-link dropdown-toggle a_nav pl-0" id="dropdownMenuButton" asp-area="" asp-page="/Investments/Investments">Инвестиции</a>
+                            <div class="dropdown-menu p-0 mt-0 myMl" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item nav-link ml-0" asp-area="" asp-page="/Investments/History">История инвестиций</a>
+                                <div class="dropdown-divider m-0"></div>
+                                <a class="dropdown-item nav-link" asp-area="" asp-page="/Investments/ForWhat">Для чего нужно инвестировать</a>
+                                <div class="dropdown-divider m-0"></div>
+                                <a class="dropdown-item nav-link" asp-area="" asp-page="/Investments/HowToStart">Как начать инвестировать</a>
+                                <div class="dropdown-divider m-0"></div>
+                                <a class="dropdown-item nav-link" asp-area="" asp-page="/Investments/Articles">Статьи и литература</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark a_nav" asp-area="" asp-page="/StocksAndBonds/Stocks">Акции</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark a_nav" asp-area="" asp-page="/StocksAndBonds/Bonds">Облигации</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark a_nav" asp-area="" asp-page="/Portfel">Портфель</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark a_nav" asp-area="" asp-page="/Contact">Контакты</a>
+                    </li>
+                </ul>
+            </div>
+
+
+            <div class="align-self-sm-baseline" id="login_register">
+                <table class="col-2">
+                    @if (User.Claims.Count() > 0)
+                    {
+                        <td>
+                            <a asp-page="/LoginRegister/Account" class="myFont">@User.Claims.FirstOrDefault(x => x.Type == "userName")?.Value</a>
+                        </td>
+                        <td id="separator">|</td>
+                        <td>
+                            <a style="cursor: pointer" onclick="logout()" class="myFont">Выйти</a>
+                        </td>
+                    }
+                    else
+                    {
+                        <td>
+                            <a asp-page="/LoginRegister/Login" class="myFont">Войти</a>
+                        </td>
+                        <td id="separator">|</td>
+                        <td>
+                            <a asp-page="/LoginRegister/Register" class="myFont">Регистрация</a>
+                        </td>
+                    }
+                </table>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<div class="container">
+    <main role="main">
+        @RenderBody()
+    </main>
+</div>
+
+<footer class="footer navbar-fixed-bottom text-muted mb-2 mt-3">
+    <div class="container border-top myBorderColor">
+        &copy; 2021 - ClevInvest. Елагин Марат.
+    </div>
+</footer>
+
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+<script src="~/js/profileEdit.js" asp-append-version="true"></script>
+
+@await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

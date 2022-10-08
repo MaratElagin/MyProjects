@@ -1,0 +1,29 @@
+﻿@page
+@model ClevInvest.Pages.LoginRegister.Login
+
+<div class="row justify-content-center">
+    <div class="col-10 col-md-6 pageText justify-content-center">
+        <form method="post">
+            <div class="modal-body text-justify">
+                <h1 class="text-center">Вход</h1>
+                <p class="text-center text-danger">@Model.Error</p>
+                <label class="ml-2 mb-0">Логин</label>
+                <input asp-for="RegisteredUser.Login" name="RegisteredUser.Login" type="text" class="form-control inputStyle" autocomplete="off">
+                <span asp-validation-for="RegisteredUser.Login" class="text-danger ml-2"></span>
+
+                <label class="ml-1 mb-0 mt-2">Пароль</label>
+                <input asp-for="RegisteredUser.Password" name="RegisteredUser.Password"  type="password" class="form-control inputStyle">
+                <span asp-validation-for="RegisteredUser.Password" class="text-danger ml-2"></span>
+            </div>
+            <div class="modal-footer justify-content-center flex-wrap border-top-0">
+                <input type="submit" class="btn btn-primary w-100 btnRoundBorders" value="Войти">
+                <a class="mt-2" asp-page="/LoginRegister/Register">Ещё нет аккаунта?</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts
+{
+    <partial name="Shared/_ValidationScriptsPartial"></partial>
+}

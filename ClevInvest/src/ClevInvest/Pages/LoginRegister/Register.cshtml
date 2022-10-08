@@ -1,0 +1,48 @@
+﻿@page
+@model ClevInvest.Pages.LoginRegister.Register
+
+
+<div class="row justify-content-center">
+    <div class="col-10 col-md-6 pageText justify-content-center">
+        <form method="post">
+            <div class="text-justify">
+                <h1 class="text-center">Регистрация</h1>
+                <p class="text-center text-danger">@Model.Error</p>
+                <div>
+                    <label class="ml-2 mb-0">Имя пользователя</label>
+                    <input asp-for="NewUser.UserName" name="NewUser.UserName" type="text" class="form-control inputStyle" autocomplete="new-password">
+                    <span asp-validation-for="NewUser.UserName" class="text-danger ml-2"></span>
+                </div>
+                <div>
+                    <label class="ml-2 mb-0">Дата рождения</label>
+                    <input asp-for="NewUser.BirthDate" type="text" class="form-control inputStyle" autocomplete="new-password">
+                    <span asp-validation-for="NewUser.BirthDate" class="text-danger ml-2"></span>
+                </div>
+                <div>
+                    <label class="ml-2 mb-0 mt-2">Логин</label>
+                    <input asp-for="NewUser.Login" name="NewUser.Login" type="text" class="form-control inputStyle" autocomplete="off">
+                    <span asp-validation-for="NewUser.Login" class="text-danger ml-2"></span>
+                </div>
+                <div>
+                    <label class="ml-2 mb-0 mt-2">Пароль</label>
+                    <input asp-for="NewUser.Password1" name="NewUser.Password1" type="password" class="password form-control inputStyle">
+                    <span asp-validation-for="NewUser.Password1" class="text-danger ml-2"></span>
+                </div>
+                <div>
+                    <label class="password ml-2 mb-0 mt-2">Подтверждение пароля</label>
+                    <input asp-for="NewUser.Password2" name="NewUser.Password2" type="password" class="form-control inputStyle">
+                    <span asp-validation-for="NewUser.Password2" class="text-danger ml-2"></span>
+                </div>
+            </div>
+            <div class="modal-footer justify-content-center flex-wrap border-top-0 p-0">
+                <input type="submit" class="btn btn-primary w-100 btnRoundBorders" value="Зарегистрироваться">
+                <a class="mt-2" asp-page="LoginRegister/Login">Уже зарегестрированы?</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts
+{
+    <partial name="Shared/_ValidationScriptsPartial"></partial>
+}
